@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .active-link {
+    @apply p-2 text-gray-900 dark:text-white border-b-4 border-yellow-400 font-semibold !important;
+  }
+  .nav-link {
+    @apply p-2 text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white md:border-b-2 border-yellow-50 dark:border-gray-900 hover:border-yellow-400;
+  }
+}
