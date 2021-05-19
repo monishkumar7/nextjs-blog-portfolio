@@ -1,22 +1,23 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from 'next/head';
+import Link from 'next/link';
 
-import { getPosts } from '../../lib/posts'
-import Footer from '../../components/Footer'
-import ActiveLink from '../../components/ActiveLink'
+import { getPosts } from '../../lib/posts';
+import Footer from '../../components/Footer';
+import ActiveLink from '../../components/ActiveLink';
 
 export async function getStaticProps() {
-  const posts = await getPosts()
+  const posts = await getPosts();
 
   if (!posts) {
     return {
       notFound: true,
-    }
+    };
   }
 
   return {
-    props: { posts }, revalidate: 1
-  }
+    props: { posts },
+    revalidate: 1,
+  };
 }
 
 export default function Home(props) {
@@ -28,12 +29,12 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-yellow-50 dark:bg-gray-900 md:h-screen md:flex">
-        <div className="bg-yellow-100 dark:bg-gray-800 md:bg-yellow-50 md:dark:bg-gray-900 text-center md:text-left md:pl-8 xl:w-1/4 2xl:w-1/5 pt-20 md:w-1/3 md:flex md:justify-between md:flex-col">
+      <main className="bg-blue-50 dark:bg-gray-900 md:h-screen md:flex">
+        <div className="bg-blue-100 dark:bg-gray-800 md:bg-blue-50 md:dark:bg-gray-900 text-center md:text-left md:pl-8 xl:w-1/4 2xl:w-1/5 pt-20 md:w-1/3 md:flex md:justify-between md:flex-col">
           <div>
-            <div className="md:border-b-4 md:border-yellow-400 pb-4">
-              <h1 className="px-1 md:px-0 text-center md:text-left text-3xl md:text-4xl text-dark-900 dark:text-yellow-400 font-extrabold mb-1">
-              Your Blog Title
+            <div className="md:border-b-4 md:border-blue-400 pb-4">
+              <h1 className="px-1 md:px-0 text-center md:text-left text-3xl md:text-4xl text-dark-900 dark:text-blue-400 font-extrabold mb-1">
+                Your Blog Title
               </h1>
               <h2 className="text-xl text-gray-900 dark:text-white text-center md:text-left">
                 Your Blog Subtitle
@@ -80,16 +81,16 @@ export default function Home(props) {
                   <p className="text-gray-700 dark:text-gray-200">
                     {post.excerpt}
                   </p>
-                  <hr class="border-0 bg-yellow-400 my-16 w-1/3 h-px mx-auto"></hr>
+                  <hr class="border-0 bg-blue-400 my-16 w-1/3 h-px mx-auto"></hr>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </main>
-      <div className="bg-yellow-50 dark:bg-gray-900 block md:hidden">
+      <div className="bg-blue-50 dark:bg-gray-900 block md:hidden">
         <Footer />
       </div>
     </div>
-  )
+  );
 }

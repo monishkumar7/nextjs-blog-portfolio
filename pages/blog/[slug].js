@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from 'next/head';
+import Link from 'next/link';
 
-import { getSinglePost, getPosts } from '../../lib/posts'
-import Footer from '../../components/Footer'
+import { getSinglePost, getPosts } from '../../lib/posts';
+import Footer from '../../components/Footer';
 
 const PostPage = (props) => {
   return (
@@ -12,10 +12,10 @@ const PostPage = (props) => {
         <meta name="description" content={props.post.excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="min-h-screen bg-yellow-50 dark:bg-gray-900">
+      <div className="min-h-screen bg-blue-50 dark:bg-gray-900">
         <div className="container max-w-prose pt-16 pb-4 px-4 md:mx-auto">
           <Link href="/blog">
-            <h4 className="text-yellow-400 cursor-pointer underline text-xl">
+            <h4 className="text-blue-400 cursor-pointer underline text-xl">
               {'<'} Your Blog Title
             </h4>
           </Link>
@@ -43,29 +43,30 @@ const PostPage = (props) => {
         <Footer />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default PostPage
+export default PostPage;
 
 export async function getStaticPaths() {
-  const posts = await getPosts()
+  const posts = await getPosts();
 
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
-  }))
+  }));
 
-  return { paths, fallback: false }
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps(context) {
-  const post = await getSinglePost(context.params.slug)
+  const post = await getSinglePost(context.params.slug);
 
   if (!post) {
-    return { notFound: true }
+    return { notFound: true };
   }
 
   return {
-    props: { post }, revalidate: 1
-  }
+    props: { post },
+    revalidate: 1,
+  };
 }

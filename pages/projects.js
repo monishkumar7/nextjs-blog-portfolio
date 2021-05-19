@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import { ExternalLinkIcon } from '@heroicons/react/outline'
+import Head from 'next/head';
+import { ExternalLinkIcon } from '@heroicons/react/outline';
 
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 
 const projects = [
   {
@@ -9,19 +9,17 @@ const projects = [
     name: 'Project 1',
     link: '#',
     linkText: 'project1.com',
-    description:
-      'A brief description of the project',
+    description: 'A brief description of the project',
   },
   {
     id: 2,
     name: 'Project 2',
     link: '#',
     linkText: 'project2.com',
-    description:
-      'A brief description of the project',
+    description: 'A brief description of the project',
   },
   // You can add more projects here
-]
+];
 
 export default function Projects() {
   return (
@@ -32,7 +30,7 @@ export default function Projects() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div className="space-y-6 max-w-prose mx-auto py-8">
+        <div className="space-y-6 max-w-prose mx-auto py-8 min-w-full">
           {projects.map((project) => (
             <div
               className="bg-white dark:bg-gray-700 p-4 md:p-8 space-y-2 shadow-md rounded"
@@ -44,7 +42,7 @@ export default function Projects() {
                 </p>
                 <div className="flex items-center space-x-1">
                   <a
-                    className="text-yellow-400"
+                    className="text-blue-400"
                     href={project.link}
                     target="_blank"
                     rel="noopener"
@@ -65,5 +63,5 @@ export default function Projects() {
         </div>
       </Layout>
     </>
-  )
+  );
 }

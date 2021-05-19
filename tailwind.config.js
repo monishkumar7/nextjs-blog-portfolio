@@ -8,9 +8,9 @@ module.exports = {
           css: {
             color: theme('colors.gray.900'),
             a: {
-              color: theme('colors.yellow.400'),
+              color: theme('colors.blue.400'),
               '&:hover': {
-                color: theme('colors.yellow.700'),
+                color: theme('colors.blue.700'),
               },
             },
           },
@@ -19,7 +19,7 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             '[class~="lead"]': { color: theme('colors.gray.400') },
-            a: { color: theme('colors.yellow.400') },
+            a: { color: theme('colors.blue.400') },
             strong: { color: theme('colors.gray.50') },
             'ul > li::before': { backgroundColor: theme('colors.gray.700') },
             hr: { borderColor: theme('colors.gray.700') },
@@ -32,7 +32,7 @@ module.exports = {
             h3: { color: theme('colors.gray.50') },
             h4: { color: theme('colors.gray.50') },
             code: { color: theme('colors.gray.200') },
-            'a code': { color: theme('colors.yellow.400') },
+            'a code': { color: theme('colors.blue.400') },
             pre: {
               color: theme('colors.gray.200'),
               backgroundColor: theme('colors.gray.800'),
@@ -51,4 +51,4 @@ module.exports = {
     extend: { typography: ['dark'] },
   },
   plugins: [require('@tailwindcss/typography')],
-}
+};
