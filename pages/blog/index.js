@@ -42,10 +42,16 @@ export default function Home(props) {
             </div>
             <div className="flex md:flex-col md:items-start md:space-x-0 md:space-y-2 py-8 space-x-4 justify-center items-center">
               <ActiveLink href="/">
-                <a className="nav-link pl-0">Home</a>
+                <a className="nav-link pl-0">
+                  <HomeIcon className="mr-1 h-4 w-4" aria-hidden="true" />
+                  Home
+                </a>
               </ActiveLink>
               <ActiveLink activeClassName="active-link" href="/projects">
-                <a className="nav-link pl-0">Projects</a>
+                <a className="nav-link pl-0">
+                  <BriefcaseIcon className="mr-1 h-4 w-4" aria-hidden="true" />
+                  Projects
+                </a>
               </ActiveLink>
             </div>
           </div>
